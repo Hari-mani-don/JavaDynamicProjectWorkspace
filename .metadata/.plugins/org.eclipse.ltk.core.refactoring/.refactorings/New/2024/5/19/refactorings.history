@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;New/src/main/webapp/hari.html&apos; to &apos;index.html&apos;" description="Rename resource &apos;hari.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/hari.html" name="index.html" stamp="1715375151759" updateReferences="true"/>&#x0A;&#x0A;</session>

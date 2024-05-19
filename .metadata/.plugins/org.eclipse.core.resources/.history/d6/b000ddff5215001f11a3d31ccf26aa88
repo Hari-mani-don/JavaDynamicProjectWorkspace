@@ -1,0 +1,16 @@
+package jsonPack2ManojBro;
+
+public class EmployeeClass {
+	private int employeeId;
+	private String employeeName;
+	private String employeePosition;
+	private double employeeSalary;
+	private String employeeEmail;
+
+	public EmployeeClass() {
+
+	}
+	
+	
+
+}

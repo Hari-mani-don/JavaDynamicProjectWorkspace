@@ -1,0 +1,55 @@
+package jsonPack2ManojBro;
+
+public class EmployeeClass {
+    private int id;
+    private String employeeName;
+    private String employeePosition;
+    private double employeeSalary;
+    private String employeeEmail;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public String getEmployeePosition() {
+        return employeePosition;
+    }
+
+    public void setEmployeePosition(String employeePosition) {
+        this.employeePosition = employeePosition;
+    }
+
+    public double getEmployeeSalary() {
+        return employeeSalary;
+    }
+
+    public void setEmployeeSalary(double employeeSalary) {
+        this.employeeSalary = employeeSalary;
+    }
+
+    public String getEmployeeEmail() {
+        return employeeEmail;
+    }
+
+    public void setEmployeeEmail(String employeeEmail) {
+        this.employeeEmail = employeeEmail;
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeClass [id=" + id + ", employeeName=" + employeeName + ", employeePosition=" + employeePosition
+                + ", employeeSalary=" + employeeSalary + ", employeeEmail=" + employeeEmail + "]";
+    }
+}

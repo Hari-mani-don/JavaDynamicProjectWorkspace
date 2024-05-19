@@ -1,0 +1,16 @@
+package jsonComplexPackage;
+
+public class Contact {
+	private String phone;
+	private Address address;
+
+	public Contact() {
+	}
+
+	public Contact(String phone, Address address) {
+		super();
+		this.phone = phone;
+		this.address = address;
+	}
+
+}

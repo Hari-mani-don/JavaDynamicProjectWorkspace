@@ -1,0 +1,121 @@
+package jsonPack2ManojBro;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class MainClass {
+    public static void main(String[] args) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        Company company = mapper.readValue(new File("/home/harimani/HariManiFolder/NewFile01.json"), Company.class);
+        System.out.println(company);
+
+        String s = mapper.writeValueAsString(company);
+        System.out.println(s);
+    }
+}
+
+class Company {
+    private List<DepartmentHari> Company;
+
+    public Company() {
+    }
+
+    public Company(List<DepartmentHari> Company) {
+        this.Company = Company;
+    }
+
+    public List<DepartmentHari> getCompany() {
+        return Company;
+    }
+
+    public void setCompany(List<DepartmentHari> Company) {
+        this.Company = Company;
+    }
+
+    @Override
+    public String toString() {
+        return "Company [Company=" + Company + "]";
+    }
+}
+
+class DepartmentHari {
+    private String departmentName;
+    private List<EmployeeHari> employeeList;
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public List<EmployeeHari> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<EmployeeHari> employeeList) {
+        this.employeeList = employeeList;
+    }
+
+    @Override
+    public String toString() {
+        return "DepartmentHari [departmentName=" + departmentName + ", employeeList=" + employeeList + "]";
+    }
+}
+
+class EmployeeHari {
+    private int employeeId;
+    private String employeeName;
+    private String employeePosition;
+    private double employeeSalary;
+    private String employeeEmail;
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public String getEmployeePosition() {
+        return employeePosition;
+    }
+
+    public void setEmployeePosition(String employeePosition) {
+        this.employeePosition = employeePosition;
+    }
+
+    public double getEmployeeSalary() {
+        return employeeSalary;
+    }
+
+    public void setEmployeeSalary(double employeeSalary) {
+        this.employeeSalary = employeeSalary;
+    }
+
+    public String getEmployeeEmail() {
+        return employeeEmail;
+    }
+
+    public void setEmployeeEmail(String employeeEmail) {
+        this.employeeEmail = employeeEmail;
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeHari [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeePosition="
+                + employeePosition + ", employeeSalary=" + employeeSalary + ", employeeEmail=" + employeeEmail + "]";
+    }
+}

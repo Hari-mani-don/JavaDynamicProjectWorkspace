@@ -1,0 +1,40 @@
+package jsonPack2ManojBro;
+
+import java.util.List;
+
+public class Company {
+	private String Name;
+	private List<DepartmentClass> departments;
+
+	public Company(String Name, List<DepartmentClass> departments) {
+		super();
+		this.Name = Name;
+		this.departments = departments;
+	}
+
+	public Company() {
+
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setCompanyName(String Name) {
+		this.Name = Name;
+	}
+
+	public List<DepartmentClass> getDepartments() {
+	    return departments;
+	}
+
+	public void setDepartments(List<DepartmentClass> departments) {
+	    this.departments = departments;
+	}
+
+	@Override
+	public String toString() {
+		return "Company [name=" + companyName + ", department=" + departments + "]";
+	}
+
+}

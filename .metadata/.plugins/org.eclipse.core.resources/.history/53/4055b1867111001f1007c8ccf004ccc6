@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="AddUpdateDelete2">
+        <property name="context-root" value="AddUpdateDelete2"/>
+        <property name="java-output-path" value="/AddUpdateDelete2/build/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+
+nav{
+display:flex;
+flex-direction: right;
+border:1px solid 
+}
+p{
+	color: red;
+	border: 1px solid black;
+}

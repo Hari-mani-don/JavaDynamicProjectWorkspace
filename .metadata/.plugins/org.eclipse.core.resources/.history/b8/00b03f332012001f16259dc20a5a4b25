@@ -1,0 +1,70 @@
+package servletPackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import dpConnection.DpConnection;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import modelClass.AdminUpdate;
+
+@WebServlet("/adminUpdateServlet")
+public class adminUpdateServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html;charset=UTF-8");
+		try (PrintWriter out = response.getWriter();) {
+			int id = Integer.parseInt(request.getParameter("id"));
+
+			Connection con = DpConnection.getConnection();
+			Statement stm = con.createStatement();
+			ResultSet rs = stm.executeQuery("select * from airlineRegistration");
+
+			while (rs.next()) {
+				<td><%=rs.getString("FirstName")%></td>
+				<td><%=rs.getString("LastName")%></td>
+				<td><%=rs.getString("UserName")%></td>
+				<td><%=rs.getString("Password")%></td>
+				<td><%=rs.getString("Email")%></td>
+				<td><%=rs.getString("DOB")%></td>
+				<td><%=rs.getInt("Age")%></td>
+				<td><%=rs.getString("Gender")%></td>
+				<td><%=rs.getLong("MobileNumber")%></td>
+				<td><%=rs.getString("Address")%></td>
+				<td><%=rs.getString("City")%></td>
+				<td><%=rs.getString("State")%></td>
+				<td><%=rs.getLong("PinCode")%></td>
+				
+				String firstName =rs.getString("FirstName");
+				String lastName=rs.getString("LastName"); 
+				String userName=rs.getString("UserName");
+				String password==rs.getString("Password");
+				String email;
+				int age;
+				String gender;
+				String dob;
+				long mobileNumber;
+				String city;
+				String state;
+				String address;
+				long pincode;
+				if (rs.getInt("id") == id) {
+					AdminUpdate adminUpdate = new AdminUpdate("");
+				}
+
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+	}
+
+}

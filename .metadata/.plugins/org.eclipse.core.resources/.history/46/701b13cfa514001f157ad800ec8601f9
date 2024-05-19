@@ -1,0 +1,28 @@
+package jsonPack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayCheckClass {
+	List<Employee> list = new ArrayList<Employee>();
+	
+	ArrayCheckClass
+	public ArrayCheckClass(List<Employee> list) {
+		super();
+		this.list = list;
+	}
+
+	public List<Employee> getList() {
+		return list;
+	}
+
+	public void setList(List<Employee> list) {
+		this.list = list;
+	}
+
+	@Override
+	public String toString() {
+		return "ArrayCheckClass [list=" + list + "]";
+	}
+	
+}

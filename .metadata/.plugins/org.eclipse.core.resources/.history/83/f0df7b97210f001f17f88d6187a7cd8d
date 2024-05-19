@@ -1,0 +1,22 @@
+package newServlet;
+
+import java.io.IOException;
+
+
+/**
+ * Servlet implementation class Example
+ */
+
+@WebServlet("/Example")
+public class Example extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("hello hari"+request.getParameter("uname"));
+		System.out.println("hello hari"+request.getParameter("pass"));
+	}
+
+}

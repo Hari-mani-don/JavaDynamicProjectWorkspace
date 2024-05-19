@@ -1,0 +1,5 @@
+package jsonPack;
+
+public class Employee {
+	private int employeeId;
+}

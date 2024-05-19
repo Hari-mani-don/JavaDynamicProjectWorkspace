@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	paddin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: red;
+	width: 100vw;
+	height: 100vh;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+}
+
+ .login {
+	
+	height: 20rem;
+	width: 20rem;
+	background-color: white;
+}
+
+form {
+	height: 100%;
+	width: 100%;
+} */

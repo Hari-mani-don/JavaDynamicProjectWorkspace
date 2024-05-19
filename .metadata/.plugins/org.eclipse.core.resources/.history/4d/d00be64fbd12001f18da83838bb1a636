@@ -1,0 +1,37 @@
+package modelClass;
+
+public class Flight {
+	private String flightName;
+	private String flightNumber;
+	private String flightsource;
+	private String flightdestination;
+	
+	F
+	public String getFlightName() {
+		return flightName;
+	}
+	public void setFlightName(String flightName) {
+		this.flightName = flightName;
+	}
+	public String getFlightNumber() {
+		return flightNumber;
+	}
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
+	}
+	public String getFlightsource() {
+		return flightsource;
+	}
+	public void setFlightsource(String flightsource) {
+		this.flightsource = flightsource;
+	}
+	public String getFlightdestination() {
+		return flightdestination;
+	}
+	public void setFlightdestination(String flightdestination) {
+		this.flightdestination = flightdestination;
+	}
+	
+	
+	
+}

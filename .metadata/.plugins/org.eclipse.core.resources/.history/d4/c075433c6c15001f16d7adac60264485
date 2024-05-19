@@ -1,0 +1,20 @@
+package jsonPack2ManojBro;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+
+public class MainClass {
+
+	public static void main(String[] args) throws JsonSyntaxException, JsonIOException, FileNotFoundException {
+	  Sti
+		Gson gson = new Gson();
+		Company company = gson.fromJson(new FileReader("/home/harimani/HariManiFolder/NewFile01.json"), Company.class);
+
+		System.out.println(company);
+
+	}
+}

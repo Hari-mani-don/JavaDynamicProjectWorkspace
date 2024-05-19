@@ -1,0 +1,11 @@
+package jsonMoreComplex;
+
+import java.util.List;
+
+public class Campaigns {
+	private String campaignId;
+	private String campaignName;
+	private int budget;
+	private List<String> platforms;
+	private String startDate;
+}

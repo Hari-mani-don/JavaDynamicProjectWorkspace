@@ -1,0 +1,155 @@
+import java.io.IOException;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+class Company {
+    private String companyName;
+    private List<Department> departments;
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public List<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(List<Department> departments) {
+        this.departments = departments;
+    }
+
+    @Override
+    public String toString() {
+        return "Company [companyName=" + companyName + ", departments=" + departments + "]";
+    }
+}
+
+class Department {
+    private String departmentName;
+    private List<Employee> employeeList;
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<Employee> employeeList) {
+        this.employeeList = employeeList;
+    }
+
+    @Override
+    public String toString() {
+        return "Department [departmentName=" + departmentName + ", employeeList=" + employeeList + "]";
+    }
+}
+
+class Employee {
+    private int employeeId;
+    private String employeeName;
+    private String employeePosition;
+    private double employeeSalary;
+    private String employeeEmail;
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public String getEmployeePosition() {
+        return employeePosition;
+    }
+
+    public void setEmployeePosition(String employeePosition) {
+        this.employeePosition = employeePosition;
+    }
+
+    public double getEmployeeSalary() {
+        return employeeSalary;
+    }
+
+    public void setEmployeeSalary(double employeeSalary) {
+        this.employeeSalary = employeeSalary;
+    }
+
+    public String getEmployeeEmail() {
+        return employeeEmail;
+    }
+
+    public void setEmployeeEmail(String employeeEmail) {
+        this.employeeEmail = employeeEmail;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeePosition="
+                + employeePosition + ", employeeSalary=" + employeeSalary + ", employeeEmail=" + employeeEmail + "]";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        String json = "{\n" +
+            "  \"companyName\": \"Tech Solutions\",\n" +
+            "  \"departments\": [\n" +
+            "    {\n" +
+            "      \"departmentName\": \"Development\",\n" +
+            "      \"employeeList\": [\n" +
+            "        {\n" +
+            "          \"employeeId\": 1,\n" +
+            "          \"employeeName\": \"Alice Johnson\",\n" +
+            "          \"employeePosition\": \"Software Engineer\",\n" +
+            "          \"employeeSalary\": 70000,\n" +
+            "          \"employeeEmail\": \"alice.johnson@techsolutions.com\"\n" +
+            "        },\n" +
+            "        {\n" +
+            "          \"employeeId\": 2,\n" +
+            "          \"employeeName\": \"Bob Smith\",\n" +
+            "          \"employeePosition\": \"Senior Developer\",\n" +
+            "          \"employeeSalary\": 90000,\n" +
+            "          \"employeeEmail\": \"bob.smith@techsolutions.com\"\n" +
+            "        }\n" +
+            "      ]\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"departmentName\": \"Marketing\",\n" +
+            "      \"employeeList\": [\n" +
+            "        {\n" +
+            "          \"employeeId\": 3,\n" +
+            "          \"employeeName\": \"Carol White\",\n" +
+            "          \"employeePosition\": \"Marketing Manager\",\n" +
+            "          \"employeeSalary\": 75000,\n" +
+            "          \"employeeEmail\": \"carol.white@techsolutions.com\"\n" +
+            "        }\n" +
+            "      ]\n" +
+            "    }\n" +
+            "  ]\n" +
+            "}";
+
+        ObjectMapper mapper = new ObjectMapper();
+        Company company = mapper.readValue(json, Company.class);
+        System.out.println(company);
+    }
+}

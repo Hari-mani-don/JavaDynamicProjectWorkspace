@@ -1,0 +1,29 @@
+package jsonComplexPackage;
+
+import java.util.List;
+
+public class CompanyWrapper {
+	private List<Company> companies;
+
+	public CompanyWrapper() {
+	}
+
+	public CompanyWrapper(List<Company> company) {
+		super();
+		this.company = company;
+	}
+
+	public List<Company> getCompany() {
+		return company;
+	}
+
+	public void setCompany(List<Company> company) {
+		this.company = company;
+	}
+
+	@Override
+	public String toString() {
+		return "CompanyWrapper [company=" + company + "]";
+	}
+
+}

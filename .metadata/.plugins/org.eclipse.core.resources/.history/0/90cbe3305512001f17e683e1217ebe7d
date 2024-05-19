@@ -1,0 +1,62 @@
+package servletPackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/adminInsertDataServlet")
+public class AdminInsertDataServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+
+		try (PrintWriter out = response.getWriter();) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			String firstName = request.getParameter("fName");
+			String lastName = request.getParameter("lName");
+			String userName = request.getParameter("userName");
+			String password = request.getParameter("password");
+			String email = request.getParameter("email");
+			int age = Integer.parseInt(request.getParameter("age"));
+			String gender = request.getParameter("Gender");
+			String dob = request.getParameter("dob");
+			long mobileNumber = Long.parseLong(request.getParameter("mobileNumber"));
+			String city = request.getParameter("city");
+			String state = request.getParameter("state");
+			String address = request.getParameter("address");
+			long pincode = Long.parseLong(request.getParameter("pincode"));
+
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root", "root");
+			Statement stm = con.createStatement();
+			int rs = stm.executeUpdate(
+					"Insert into  airlineRegistration (UserName,Password) values('" + firstName + "','" + lastName + "','" + userName + "','" + password + "','" + email + "','" + dob + "','" + age + "','" + gender + "', '"+mobileNumber + "','" + city + "','" + dob + "','" + age + "','" + gender + "',)");
+
+			if (rs == 1) {
+				
+				
+			} else {
+				out.println("Data not inserted try again!!");
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e);
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}

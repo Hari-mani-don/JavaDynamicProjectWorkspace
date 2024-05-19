@@ -1,0 +1,16 @@
+package modelClass;
+
+public class Login {
+	private String email;
+	private String password;
+	
+	Login(String email, String password){
+		this.email=email;
+		this.password=password;
+		
+	}
+	
+	public Login() {
+		// TODO Auto-generated constructor stub
+	}
+}

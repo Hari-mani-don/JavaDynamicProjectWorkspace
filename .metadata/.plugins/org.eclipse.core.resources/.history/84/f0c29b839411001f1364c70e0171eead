@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body {
+	background-color: red;
+	width: 100vw;
+	heigh: 100vh;
+}
+
+.login {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height: 20rem;
+	width: 20rem;
+	background-color: white;
+}
+
+form {
+	height: 100%;
+	width: 100%;
+}

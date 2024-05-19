@@ -1,0 +1,29 @@
+package jsonMoreComplex;
+
+public class Location {
+	private String address;
+	private String city;
+	private String state;
+	private String zip;
+	private String country;
+	public Location() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Location(String address, String city, String state, String zip, String country) {
+		super();
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.country = country;
+	}
+	
+	@Override
+	public String toString() {
+		return "Location [address=" + address + ", city=" + city + ", state=" + state + ", zip=" + zip + ", country="
+				+ country + "]";
+	}
+	
+	
+}

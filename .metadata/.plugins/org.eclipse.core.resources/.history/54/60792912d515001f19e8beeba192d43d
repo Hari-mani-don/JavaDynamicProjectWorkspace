@@ -1,0 +1,5 @@
+package jsonMoreComplex;
+
+public class Campaigns {
+	private String campaignId;
+}

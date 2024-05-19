@@ -1,0 +1,12 @@
+package jsonComplexPackage;
+
+public class Project {
+	private String projectId;
+	private String projectName;
+	private String role;
+
+	public Project() {
+	}
+	
+
+}

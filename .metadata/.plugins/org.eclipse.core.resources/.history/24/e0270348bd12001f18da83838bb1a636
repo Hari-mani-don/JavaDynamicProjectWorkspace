@@ -1,0 +1,11 @@
+package modelClass;
+
+public class Flight {
+	private String flightName;
+	private String flightNumber;
+	private String flightsource;
+	private String flightdestination;
+	
+	
+	
+}

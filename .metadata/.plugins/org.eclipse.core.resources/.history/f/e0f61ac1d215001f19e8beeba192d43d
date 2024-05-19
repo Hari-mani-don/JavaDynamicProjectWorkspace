@@ -1,0 +1,6 @@
+package jsonMoreComplex;
+
+public class Project {
+	private String projectId;
+	
+}

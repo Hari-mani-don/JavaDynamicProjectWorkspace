@@ -1,0 +1,15 @@
+package pack1;
+
+
+public class Hari extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		if (request.getParameter("userName") != "") {
+			System.out.println("hello hari");
+		} else {
+			System.out.println("hello mani");
+		}
+	}
+
+}

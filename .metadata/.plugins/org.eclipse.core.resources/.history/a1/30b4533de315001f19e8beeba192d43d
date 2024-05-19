@@ -1,0 +1,13 @@
+package jsonMoreComplex;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		ObjectMapper ob = new ObjectMapper();
+
+		ob.readValue(new File("/home/harimani/HariManiFolder/complexJson.json"), Company.class);
+
+	}
+}

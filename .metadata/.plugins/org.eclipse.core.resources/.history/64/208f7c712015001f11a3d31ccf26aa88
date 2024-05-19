@@ -1,0 +1,33 @@
+package jsonPack;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class JsonToJava {
+
+	public static void main(String[] args) throws IOException {
+
+//		try {
+//			ObjectMapper mapper = new ObjectMapper();
+//			System.out.println("hari");
+//			ArrayCheckClass e = mapper.readValue(new File("/home/harimani/jsonDataFolder/emploee.txt"), ArrayCheckClass.class);
+////			System.out.println(e);
+//		} catch (IOException e) {
+//			System.out.println(e);
+//		} catch (Exception e) {
+//
+//			System.out.println(e);
+//		}
+
+//
+		Employee e = new Employee();
+		FileOutputStream fos = new FileOutputStream("/home/harimani/jsonDataFolder/emploee.txt");
+//		ObjectOutputStream oos = new ObjectOutputStream(fos);
+//		oos.writeObject(e);
+		fos.wr
+		
+		
+	}
+
+}

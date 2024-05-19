@@ -1,0 +1,9 @@
+package jsonPack;
+
+public class Employee {
+	private int employeeId;
+	private String name;
+	private int age;
+	private String position;
+	private String email;
+}

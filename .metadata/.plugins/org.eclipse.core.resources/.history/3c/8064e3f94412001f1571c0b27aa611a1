@@ -1,0 +1,86 @@
+package servletPackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import dpConnection.DpConnection;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+@WebServlet("/adminDataUpdatServlet")
+public class AdminDataUpdatServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		
+		try (PrintWriter out = response.getWriter();) {
+
+			int id = Integer.parseInt(request.getParameter("id"));
+			String firstName = request.getParameter("FirstName");
+			String lastName = request.getParameter("LastName");
+			String userName = request.getParameter("UserName");
+			String password = request.getParameter("Password");
+			String email = request.getParameter("Email");
+			int age = Integer.parseInt(request.getParameter("Age"));
+			String gender = request.getParameter("Gender");
+			String dob = request.getParameter("DOB");
+			long mobileNumber = Long.parseLong(request.getParameter("MobileNumber"));
+			String city = request.getParameter("City");
+			String state = request.getParameter("State");
+			String address = request.getParameter("Address");
+			long pincode = Long.parseLong(request.getParameter("PinCode"));
+
+			System.out.println(id+""+firstName);
+			Connection con = DpConnection.getConnection();
+			Statement stm = con.createStatement();
+			ResultSet rs = stm.executeQuery("select * from airlineRegistration");
+			int result = 0;
+			while (rs.next()) {
+				if (rs.getInt("id") == id) {
+					String query = "update airlineRegistration set id=?, FirstName=?,LastName=?, UserName=?,Password=?, Email=?, Age=?,Gender=?,DOB=? , MobileNumber=?, City=?, State=?, Address=?, PinCode=? where id=?";
+					PreparedStatement stm1 = con.prepareStatement(query);
+					
+					stm1.setInt(1, id);
+					stm1.setString(2, firstName);
+					stm1.setString(3, lastName);
+					stm1.setString(4, userName);
+					stm1.setString(5, password);
+					stm1.setString(6, email);
+					stm1.setInt(7, age);
+					stm1.setString(8, gender);
+					stm1.setString(9, dob);
+					stm1.setLong(10, mobileNumber);
+					stm1.setString(11, city);
+					stm1.setString(12, state);
+					stm1.setString(13, address);
+					stm1.setLong(14, pincode);
+					result = stm1.executeUpdate();
+					break;
+				}
+			}
+			
+			if (result == 1) {
+
+				out.println("update success");
+				HttpSession sessionNullCheck = request.getSession();
+				sessionNullCheck.setAttribute("adminUpdate", null);
+				if (sessionNullCheck == null)
+					response.sendRedirect("adminUpdateUser.jsp");
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+	}
+
+}

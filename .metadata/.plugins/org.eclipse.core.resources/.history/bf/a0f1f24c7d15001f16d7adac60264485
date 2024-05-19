@@ -1,0 +1,57 @@
+package jsonPack2ManojBro;
+
+import java.io.FileNotFoundException;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+
+public class MainClass {
+
+	public static void main(String[] args) throws JsonSyntaxException, JsonIOException, FileNotFoundException {
+	  String s = "{\n"
+	  		+ "  \"Company\": {\n"
+	  		+ "    \"companyName\": \"Tech Solutions\",\n"
+	  		+ "    \"departments\": [\n"
+	  		+ "      {\n"
+	  		+ "        \"departmentName\": \"Development\",\n"
+	  		+ "        \"employeeList\": [\n"
+	  		+ "          {\n"
+	  		+ "            \"employeeId\": 1,\n"
+	  		+ "            \"employeeName\": \"Alice Johnson\",\n"
+	  		+ "            \"employeePosition\": \"Software Engineer\",\n"
+	  		+ "            \"employeeSalary\": 70000,\n"
+	  		+ "            \"employeeEmail\": \"alice.johnson@techsolutions.com\"\n"
+	  		+ "          },\n"
+	  		+ "          {\n"
+	  		+ "            \"employeeId\": 2,\n"
+	  		+ "            \"employeeName\": \"Bob Smith\",\n"
+	  		+ "            \"employeePosition\": \"Senior Developer\",\n"
+	  		+ "            \"employeeSalary\": 90000,\n"
+	  		+ "            \"employeeEmail\": \"bob.smith@techsolutions.com\"\n"
+	  		+ "          }\n"
+	  		+ "        ]\n"
+	  		+ "      },\n"
+	  		+ "      {\n"
+	  		+ "        \"departmentName\": \"Marketing\",\n"
+	  		+ "        \"employeeList\": [\n"
+	  		+ "          {\n"
+	  		+ "            \"employeeId\": 3,\n"
+	  		+ "            \"employeeName\": \"Carol White\",\n"
+	  		+ "            \"employeePosition\": \"Marketing Manager\",\n"
+	  		+ "            \"employeeSalary\": 75000,\n"
+	  		+ "            \"employeeEmail\": \"carol.white@techsolutions.com\"\n"
+	  		+ "          }\n"
+	  		+ "        ]\n"
+	  		+ "      }\n"
+	  		+ "    ]\n"
+	  		+ "  }\n"
+	  		+ "}";
+//		Gson gson = new Gson();
+	  ObjectMapper o = new Object
+		Company company = gson.fromJson(s, Company.class);
+
+		System.out.println(company);
+
+	}
+}

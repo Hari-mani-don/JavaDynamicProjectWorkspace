@@ -1,0 +1,71 @@
+package jsonPack2ManojBro;
+
+public class EmployeeClass {
+
+	private int Id;
+	private String Name;
+	private String employeePosition;
+	private double employeeSalary;
+	private String employeeEmail;
+
+	public EmployeeClass() {
+
+	}
+
+	public EmployeeClass(int employeeId, String employeeName, String employeePosition, double employeeSalary,
+			String employeeEmail) {
+		super();
+		this.Id = employeeId;
+		this.employeeName = employeeName;
+		this.employeePosition = employeePosition;
+		this.employeeSalary = employeeSalary;
+		this.employeeEmail = employeeEmail;
+	}
+
+	public int getEmployeeId() {
+		return Id;
+	}
+
+	public void setEmployeeId(int employeeId) {
+		this.Id = employeeId;
+	}
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	public String getEmployeePosition() {
+		return employeePosition;
+	}
+
+	public void setEmployeePosition(String employeePosition) {
+		this.employeePosition = employeePosition;
+	}
+
+	public double getEmployeeSalary() {
+		return employeeSalary;
+	}
+
+	public void setEmployeeSalary(double employeeSalary) {
+		this.employeeSalary = employeeSalary;
+	}
+
+	public String getEmployeeEmail() {
+		return employeeEmail;
+	}
+
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeClass [employeeId=" + Id + ", employeeName=" + employeeName + ", employeePosition="
+				+ employeePosition + ", employeeSalary=" + employeeSalary + ", employeeEmail=" + employeeEmail + "]";
+	}
+
+}

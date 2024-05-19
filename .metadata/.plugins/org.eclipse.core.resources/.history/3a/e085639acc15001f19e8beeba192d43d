@@ -1,0 +1,29 @@
+package jsonComplexPackage;
+
+import java.util.List;
+
+public class Employee {
+	private int employeeId;
+	private String employeeName;
+	private String employeePosition;
+	private String employeeEmail;
+	private double employeeSalary;
+	private Contact contactDetails;
+	private List<Project> projects;
+	
+	public Employee() {}
+
+	public Employee(int employeeId, String employeeName, String employeePosition, String employeeEmail,
+			double employeeSalary, Contact contactDetails, List<Project> projects) {
+		super();
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.employeePosition = employeePosition;
+		this.employeeEmail = employeeEmail;
+		this.employeeSalary = employeeSalary;
+		this.contactDetails = contactDetails;
+		this.projects = projects;
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+package jsonMoreComplex;
+
+public class HeadOfDepartment {
+	private String name;
+	private String 
+}

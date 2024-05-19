@@ -1,0 +1,8 @@
+package jsonPack;
+
+import java.util.ArrayList;
+
+public class ArrayCheckClass {
+	List<Employee> list = new ArrayList<Employee>();
+
+}

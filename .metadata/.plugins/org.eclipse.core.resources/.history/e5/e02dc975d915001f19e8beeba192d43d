@@ -1,0 +1,21 @@
+package jsonMoreComplex;
+
+import java.util.List;
+
+public class Department {
+	private String departmentName;
+	private HeadOfDepartment headOfDepartment;
+	private List<Employee> employeeList;
+	public Department() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Department(String departmentName, HeadOfDepartment headOfDepartment, List<Employee> employeeList) {
+		super();
+		this.departmentName = departmentName;
+		this.headOfDepartment = headOfDepartment;
+		this.employeeList = employeeList;
+	}
+	
+	
+}

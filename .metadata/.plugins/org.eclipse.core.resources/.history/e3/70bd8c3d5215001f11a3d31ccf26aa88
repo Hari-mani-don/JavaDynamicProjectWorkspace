@@ -1,0 +1,6 @@
+package jsonPack2ManojBro;
+
+public class DepartmentClass {
+     private String departmentName;
+     private 
+}

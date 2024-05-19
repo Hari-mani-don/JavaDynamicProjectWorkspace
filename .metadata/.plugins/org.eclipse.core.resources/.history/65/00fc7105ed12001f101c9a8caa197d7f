@@ -1,0 +1,52 @@
+package servletPackage;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import dpConnection.DpConnection;
+
+@WebServlet("/adminAddFlightData")
+public class AdminAddFlightData extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+
+		try (PrintWriter out = response.getWriter();) {
+System.out.println("hi hari");
+			String flightNumber = request.getParameter("fNumber").trim();
+			String flightName = request.getParameter("fName").trim();
+			String flightSource = request.getParameter("fSource").trim();
+			String flightDestination = request.getParameter("fDestination").trim();
+			String flightTime = request.getParameter("fTime").trim();
+			double flightAmount = Double.parseDouble(request.getParameter("fAmount").trim());
+
+			Connection con = DpConnection.getConnection();
+			Statement stm = con.createStatement();
+			int rs = stm.executeUpdate(
+					"INSERT INTO FlightDetails (FlightNumber, FlightName, FlightSource, FlightDestination, FlightTime, FlightAmount) VALUES ('"
+							+ flightNumber + "','" + flightName + "','" + flightSource + "',
+							+ "','" + flightDestination + "','" + flightTime + "','" + flightAmount + "')");
+
+			if (rs == 1) {
+				response.sendRedirect("adminInsertDataPage.jsp");
+
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}

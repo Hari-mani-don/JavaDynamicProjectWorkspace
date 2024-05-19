@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+<link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body>
+	<div class="container" style="width: 550px; margin-top: 50px">
+
+		<h1 class="text-white bg-primary" style="text-align: center;">Register
+			form</h1>
+		<form action="RegisrationServlet" class="form card " method="post">
+
+			<table class="table">
+				<tr>
+					<td>Name</td>
+					<td><input type="text" id="uname" name="registerName"
+						placeholder="user name"></td>
+				</tr>
+				<tr>
+					<td>Mobile Number</td>
+					<td><input type="number" id="mobilenumber"
+						name="registerMobileNumber" placeholder="mobile number"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" id="email" name="registerEmail"
+						placeholder="email"></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><input type="text" id="address" name="registerAddress"
+						placeholder="address"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" id="password"
+						name="registerPassword" placeholder="password"></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td><label for="male">Male</Lable> <input type="radio"
+						id="male" name="registerGender" value="Male" checked="checked"></td>
+					<td><label for="female">Female</Lable> <input type="radio"
+						id="female" name="registerGender" value="Female"></td>
+				</tr>
+
+			</table>
+			<div>
+				<button class="bg-success text-white btn"
+					style="border: none; margin-left: 40%; margin-bottom: 5px"
+					type="submit">Register</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

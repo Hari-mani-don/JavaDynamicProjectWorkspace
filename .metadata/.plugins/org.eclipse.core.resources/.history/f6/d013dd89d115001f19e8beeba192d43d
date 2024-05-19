@@ -1,0 +1,12 @@
+package jsonMoreComplex;
+
+import java.util.List;
+
+import jsonComplexPackage.Department;
+
+public class Company {
+	private String companyName;
+	private int establishedYear;
+	private Location location;
+	private List<Department> departments;
+}

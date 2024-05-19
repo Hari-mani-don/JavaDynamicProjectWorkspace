@@ -1,0 +1,43 @@
+
+public class adminUpdate {
+	private int id;
+	private String firstName;
+	private String lastName;
+	private String userName;
+	private String password;
+	private String email;
+	private int age;
+	private String gender;
+	private String dob;
+	private long mobileNumber;
+	private String city;
+	private String state;
+	private String address;
+	private long pincode;
+	
+	public adminUpdate() {
+		
+	}
+
+	public adminUpdate(int id, String firstName, String lastName, String userName, String password, String email,
+			int age, String gender, String dob, long mobileNumber, String city, String state, String address,
+			long pincode) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.age = age;
+		this.gender = gender;
+		this.dob = dob;
+		this.mobileNumber = mobileNumber;
+		this.city = city;
+		this.state = state;
+		this.address = address;
+		this.pincode = pincode;
+	}
+	
+	
+}

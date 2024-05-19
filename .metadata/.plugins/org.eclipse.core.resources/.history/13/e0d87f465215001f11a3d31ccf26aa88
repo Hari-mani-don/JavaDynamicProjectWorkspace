@@ -1,0 +1,12 @@
+package jsonPack2ManojBro;
+
+import java.util.List;
+
+import jsonPack.Employee;
+
+public class DepartmentClass {
+     private String departmentName;
+     private List<Employee> employeeList;
+     
+     
+}

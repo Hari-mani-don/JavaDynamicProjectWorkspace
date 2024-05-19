@@ -1,0 +1,13 @@
+package jsonPack2ManojBro;
+
+public class CompanyWrapper {
+    private Company Company;
+
+    public Company getCompany() {
+        return Company;
+    }
+
+    public void setCompany(Company company) {
+        Company = company;
+    }
+}

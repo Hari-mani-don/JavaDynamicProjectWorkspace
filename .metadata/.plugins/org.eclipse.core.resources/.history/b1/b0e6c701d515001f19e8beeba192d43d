@@ -1,0 +1,15 @@
+package jsonMoreComplex;
+
+import java.util.List;
+
+public class Employee {
+	private int employeeId;
+	private String employeeName;
+	private String employeePosition;
+	private double employeeSalary;
+	private String employeeEmail;
+	private Contact contactDetails;
+	private List<Project> projects;
+	private List<>
+
+}

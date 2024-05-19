@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body {
+ 	background-color: red; 
+	width: 100vw;
+	heigh: 100vh;
+	
+}
+
+.card {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 20rem;
+	width: 20rem;
+	
+}
+
+form {
+	border:10px solid black;
+}

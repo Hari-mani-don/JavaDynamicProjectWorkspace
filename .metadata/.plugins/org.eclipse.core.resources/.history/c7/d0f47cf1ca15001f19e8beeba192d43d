@@ -1,0 +1,5 @@
+package jsonComplexPackage;
+
+public class CompanyWrapper {
+    private List<Company> company;
+}

@@ -1,0 +1,22 @@
+package jsonPack2ManojBro;
+
+public class EmployeeClass {
+	private int employeeId;
+	private String employeeName;
+	private String employeePosition;
+	private double employeeSalary;
+	private String employeeEmail;
+
+	public EmployeeClass() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeClass [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeePosition="
+				+ employeePosition + ", employeeSalary=" + employeeSalary + ", employeeEmail=" + employeeEmail + "]";
+	}
+	
+	
+
+}

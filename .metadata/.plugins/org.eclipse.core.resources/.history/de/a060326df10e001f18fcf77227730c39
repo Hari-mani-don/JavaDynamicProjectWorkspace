@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<servlet>
+    <servlet-name>Mani</servlet-name>
+    <servlet-class>com.example.ManiServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Mani</servlet-name>
+    <url-pattern>/Mani</url-pattern>
+</servlet-mapping>

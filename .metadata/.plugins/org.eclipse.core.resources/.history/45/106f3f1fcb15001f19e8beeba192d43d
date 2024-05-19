@@ -1,0 +1,6 @@
+package jsonComplexPackage;
+
+public class Company {
+	private String companyName;
+	
+}

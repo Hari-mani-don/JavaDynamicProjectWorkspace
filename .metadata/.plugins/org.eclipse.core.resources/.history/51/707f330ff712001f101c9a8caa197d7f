@@ -1,0 +1,10 @@
+package modelClass;
+
+public class TicketBooking {
+	private String ;
+	private String email;
+	private long phone;
+	private String fullName;
+	private String fullName;
+	private String fullName;
+}

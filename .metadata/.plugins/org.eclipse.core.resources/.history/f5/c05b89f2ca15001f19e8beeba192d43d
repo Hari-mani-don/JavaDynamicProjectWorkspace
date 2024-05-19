@@ -1,0 +1,7 @@
+package jsonComplexPackage;
+
+import java.util.List;
+
+public class CompanyWrapper {
+    private List<Company> company;
+}

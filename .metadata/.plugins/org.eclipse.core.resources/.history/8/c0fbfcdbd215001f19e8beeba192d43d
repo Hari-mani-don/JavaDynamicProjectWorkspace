@@ -1,0 +1,10 @@
+package jsonMoreComplex;
+
+public class Project {
+	private String projectId;
+	private String projectName;
+	private String role;
+	private String role;
+	private String deadline;
+	
+}

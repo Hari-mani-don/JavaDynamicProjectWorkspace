@@ -1,0 +1,9 @@
+package jsonMoreComplex;
+
+public class Employee {
+	private int employeeId;
+	private String employeeName;
+	private String employeePosition;
+	private double employeeSalary;
+	private String employeeName;
+}

@@ -1,0 +1,44 @@
+<%@page import="modelClass.TicketBooking"%>
+<%@page import="java.util.List"%>
+<%@page import="modelClass.Login"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JourneyDetails</title>
+</head>
+<body>
+	<%
+	Login authentication = (Login) session.getAttribute("userEmail");
+	if (authentication == null) {
+		response.sendRedirect("login.jsp");
+	}
+	List<TicketBooking> ticketBooking =(List<TicketBooking>) session.getAttribute("ticketBooking");
+	for(TicketBooking ticketBook:ticketBooking){
+	%>
+	<div class="container">
+		<div class="row mt-5">
+			<!-- Left card -->
+			<div class="col-md-5">
+				<div class="card custom-card">
+					<img src="./images/airplane2.jpg" class="card-img-top"
+						alt="Left Card Image">
+					<div class="card-body">
+						<h5 class="card-title"><%=ticketBook.getFullName() %></h5>
+						<p class="card-text">
+							<strong>Destination:</strong>
+							<%=ticketBook.getDestination()%><br> <strong>Source:</strong>
+							<%=ticketBook.getSource()%><br> <strong>Amount:</strong>
+							$<%=ticketBook.getAmount()%><br> <strong>FightNumber:
+								</strong> <%=ticketBook.getFlightNumber() %><br> 
+								<strong>Time:</strong><%=ticketBook.getTime() %><br>
+						</p>
+						<a href="ticketBookingPage.jsp" class="btn btn-primary">BooK
+							Tickets</a> 
+					</div>
+				</div>
+			</div>
+</body>
+</html>

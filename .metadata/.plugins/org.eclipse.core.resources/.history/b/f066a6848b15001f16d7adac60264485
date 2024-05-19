@@ -1,0 +1,15 @@
+package jsonPack2ManojBro;
+
+import java.util.List;
+
+public class CompanyWrapper {
+    private Company company;
+
+    public jsonPack2ManojBro.Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(jsonPack2ManojBro.Company company) {
+        this.company = company;
+    }
+}

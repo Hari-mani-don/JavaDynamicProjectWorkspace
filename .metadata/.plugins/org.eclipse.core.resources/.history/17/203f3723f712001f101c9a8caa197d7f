@@ -1,0 +1,10 @@
+package modelClass;
+
+public class TicketBooking {
+	private String fullName;
+	private String email;
+	private long phone;
+	private String panCard;
+	private String aadhaarNumber;
+	private String fullName;
+}

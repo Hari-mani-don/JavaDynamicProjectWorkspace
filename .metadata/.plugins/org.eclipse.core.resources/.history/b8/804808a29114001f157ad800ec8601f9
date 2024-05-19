@@ -1,0 +1,8 @@
+package jsonPack;
+
+public class JsonToJava {
+	public static void main(String[] args) {
+		Object
+	}
+
+}

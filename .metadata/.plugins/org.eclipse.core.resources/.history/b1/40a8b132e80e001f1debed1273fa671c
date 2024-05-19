@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="icon" href="images/IMG-20230406-WA0007.jpg">
+
+
+<script type="text/javascript">
+	function loginValidation() {
+
+		var uName = document.getElementById("name").value;
+		var pass = document.getElementById("pass").value;
+		var afterName = uName.trim();
+		var afterPass = pass.trim();
+		if (afterName != "" && afterPass != "") {
+			return true;
+		}
+
+		return false;
+
+	}
+</script>
+
+</head>
+<body>
+	<div class="container-fluid "
+		style="margin: auto; margin-top: 50px; width: 600px;">
+		<h1 class="bg-danger text-white card-header"
+			style="text-align: center">Login Form</h1>
+		<form class=" form card " action="Servlet"
+			onSubmit="return loginValidation()">
+			<table class=" table">
+				<tr>
+					<td>User Name:</td>
+					<td><input type="text" id="name" name="userName"
+						placeholder="user name" required></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" id="pass" name="password"
+						placeholder="Password" required></td>
+				</tr>
+
+			</table>
+			<div style="display: flex;">
+				<button class=" bg-primary text-white 	btn"
+					style="border: none; margin: 15px 50px 50px 50px; border: 1px solid black;"
+					type="submit">Login</button>
+				<a href="registerForm.html"
+					style="margin-left: 30px; margin-top: 10px">Sign up</a>
+
+			</div>
+
+
+		</form>
+	</div>
+</body>
+</html>

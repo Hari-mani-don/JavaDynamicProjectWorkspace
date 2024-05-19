@@ -1,0 +1,11 @@
+@charset "UTF-8";
+body{
+	background-color: red;
+	width: 100vw;
+	heigh:100vh;
+}
+
+.card{
+ 		height:15rem;
+ 		width:
+}

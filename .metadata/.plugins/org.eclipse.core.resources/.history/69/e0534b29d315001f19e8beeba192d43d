@@ -1,0 +1,12 @@
+package jsonMoreComplex;
+
+import java.util.List;
+
+public class Project {
+	private String projectId;
+	private String projectName;
+	private String role;
+	private List<Technology> technologies;
+	private String deadline;
+
+}

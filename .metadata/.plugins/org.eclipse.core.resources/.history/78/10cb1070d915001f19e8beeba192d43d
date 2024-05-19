@@ -1,0 +1,9 @@
+package jsonMoreComplex;
+
+import java.util.List;
+
+public class Department {
+	private String departmentName;
+	private HeadOfDepartment headOfDepartment;
+	private List<Employee> employeeList;
+}

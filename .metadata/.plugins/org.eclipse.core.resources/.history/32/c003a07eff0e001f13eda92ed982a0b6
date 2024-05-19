@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="icon" href="images/IMG-20230406-WA0007.jpg">
+
+
+<script type="text/javascript">
+	function loginValidation() {
+
+		var uName = document.getElementById("name").value;
+		var pass = document.getElementById("pass").value;
+		var afterName = uName.trim();
+		var afterPass = pass.trim();
+		if (afterName != "" && afterPass != "") {
+			return true;
+		}
+
+		return false;
+
+	}
+</script>
+
+</head>
+<body>
+
+	<form action="DataServletProcess" method="get">
+
+		<input type="text"> <br>
+		<input type="password"> 
+		<input type="submit
+		"></button>
+			type="submit" >
+
+	</form>
+
+</body>
+</html>

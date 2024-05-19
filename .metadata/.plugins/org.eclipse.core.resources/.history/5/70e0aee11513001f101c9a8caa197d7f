@@ -1,0 +1,56 @@
+<%@page import="modelClass.TicketBooking"%>
+<%@page import="java.util.List"%>
+<%@page import="modelClass.Login"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JourneyDetails</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+    <%
+    Login authentication = (Login) session.getAttribute("userEmail");
+    if (authentication == null) {
+        response.sendRedirect("login.jsp");
+    }
+    List<TicketBooking> ticketBooking = (List<TicketBooking>) session.getAttribute("ticketBooking");
+    %>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Flight Name</th>
+                            <th>Destination</th>
+                            <th>Source</th>
+                            <th>Amount</th>
+                            <th>Flight Number</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (TicketBooking ticketBook : ticketBooking) { %>
+                        <tr>
+                            <td><%= ticketBook.getFullName() %></td>
+                            <td><%= ticketBook.getFlightName() %></td>
+                            <td><%= ticketBook.getDestination() %></td>
+                            <td><%= ticketBook.getSource() %></td>
+                            <td>$<%= ticketBook.getAmount() %></td>
+                            <td><%= ticketBook.getFlightNumber() %></td>
+                            <td><%= ticketBook.getTime() %></td>
+                            <td><a href="ticketBookingPage.jsp" class="btn btn-danger">cancel</a></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

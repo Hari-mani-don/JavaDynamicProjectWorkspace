@@ -1,0 +1,12 @@
+package jsonPack;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JsonToJava {
+	public static void main(String[] args) {
+		ObjectMapper mapper = new ObjectMapper();
+		
+		mapper.readValue(new File(/home/harimani/jsonDataFolder/employee), null)
+	}
+
+}

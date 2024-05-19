@@ -1,0 +1,32 @@
+package serveletPackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Page2
+ */
+@WebServlet("/Page2")
+public class Page2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		try (PrintWriter out = response.getWriter();) {
+
+			String userEmail = request.getParameter("email");
+
+
+			out.println("welcome1" + userEmail);
+			out.println("<a href='page2'>Next Page</a>");
+
+		}
+	}
+
+}

@@ -1,0 +1,29 @@
+package jsonPack2ManojBro;
+
+import java.util.List;
+
+public class DepartmentHari {
+    private String departmentName;
+    private List<EmployeeClass> employeeList;
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public List<EmployeeClass> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<EmployeeClass> employeeList) {
+        this.employeeList = employeeList;
+    }
+
+    @Override
+    public String toString() {
+        return "Department [departmentName=" + departmentName + ", employeeList=" + employeeList + "]";
+    }
+}

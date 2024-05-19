@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>adminDataDelete page</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="icon" href="images/IMG-20230406-WA0007.jpg">
+
+
+<script type="text/javascript">
+	function loginValidation() {
+
+		var uName = document.getElementById("name").value;
+		var pass = document.getElementById("pass").value;
+		var afterName = uName.trim();
+		var afterPass = pass.trim();
+		if (afterName != "" && afterPass != "") {
+			return true;
+		}
+
+		return false;
+
+	}
+</script>
+
+</head>
+<body>
+	<div class="container-fluid "
+		style="margin: auto; margin-top: 50px; width: 600px;">
+		<h1 class="bg-danger text-white card-header"
+			style="text-align: center">Login Form</h1>
+		<form class=" form card " onsubmit="return loginValidation(); "
+			action="AdminDeleteDataServlet" method="post">
+			<table class=" table">
+				<tr>
+					<td>delete User Name:</td>
+					<td><input type="text" id="name" name="deleteUserName"
+						placeholder="user name" required autofocus="autofocus"></td>
+				</tr>
+				<tr>
+					<td>delete Password:</td>
+					<td><input type="password" id="pass" name="deleteUserPassword"
+						placeholder="Password" required></td>
+				</tr>
+
+			</table>
+			<div style="display: flex;">
+				<button class=" bg-primary text-white 	btn"
+					style="border: none; margin: 15px 50px 50px 50px; border: 1px solid black;"
+					type="submit">Delete</button>
+
+
+			</div>
+
+
+		</form>
+	</div>
+</body>
+</html>

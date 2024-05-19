@@ -1,0 +1,87 @@
+package servletPackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import dpConnection.DpConnection;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import modelClass.AdminUpdate;
+
+@WebServlet("/adminDataUpdateServlet")
+public class AdminDataUpdatServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+
+		try (PrintWriter out = response.getWriter()) {
+
+			HttpSession session = request.getSession();
+			AdminUpdate adminUpdate = (AdminUpdate) session.getAttribute("adminUpdate");
+
+			if (adminUpdate == null) {
+				response.sendRedirect("adminUpdateUser.jsp");
+				return; // Added return to prevent further execution
+			}
+
+			int id = Integer.parseInt(request.getParameter("id"));
+			String firstName = request.getParameter("FirstName");
+			String lastName = request.getParameter("LastName");
+			String userName = request.getParameter("UserName");
+			String password = request.getParameter("Password");
+			String email = request.getParameter("Email");
+			int age = Integer.parseInt(request.getParameter("Age"));
+			String gender = request.getParameter("Gender");
+			String dob = request.getParameter("DOB");
+			long mobileNumber = Long.parseLong(request.getParameter("MobileNumber"));
+			String city = request.getParameter("City");
+			String state = request.getParameter("State");
+			String address = request.getParameter("Address");
+			long pincode = Long.parseLong(request.getParameter("PinCode"));
+
+			System.out.println(id+""+firstName+""+lastName+""+userName+""+password);
+			Connection con = DpConnection.getConnection();
+			if (con == null) {
+				out.println("Failed to connect to the database");
+				return; // Added return to prevent further execution
+			}
+
+			String query = "UPDATE airlineRegistration SET FirstName=?, LastName=?, UserName=?, Password=?, Email=?, Age=?, Gender=?, DOB=?, MobileNumber=?, City=?, State=?, Address=?, PinCode=? WHERE id=?";
+			PreparedStatement stm = con.prepareStatement(query);
+			stm.setString(1, firstName);
+			stm.setString(2, lastName);
+			stm.setString(3, userName);
+			stm.setString(4, password);
+			stm.setString(5, email);
+			stm.setInt(6, age);
+			stm.setString(7, gender);
+			stm.setString(8, dob);
+			stm.setLong(9, mobileNumber);
+			stm.setString(10, city);
+			stm.setString(11, state);
+			stm.setString(12, address);
+			stm.setLong(13, pincode);
+			stm.setInt(14, id);
+
+			int result = stm.executeUpdate();
+
+			if (result == 1) {
+				out.println("Update successful");
+				session.setAttribute("adminUpdate", null);
+			} else {
+				out.println("Failed to update record with ID: " + id);
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+	}
+}

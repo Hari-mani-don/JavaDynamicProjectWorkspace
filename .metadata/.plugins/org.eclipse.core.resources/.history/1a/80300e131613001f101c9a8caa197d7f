@@ -1,0 +1,59 @@
+<%@page import="modelClass.TicketBooking"%>
+<%@page import="java.util.List"%>
+<%@page import="modelClass.Login"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JourneyDetails</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+    <%
+    Login authentication = (Login) session.getAttribute("userEmail");
+    if (authentication == null) {
+        response.sendRedirect("login.jsp");
+    }
+    List<TicketBooking> ticketBooking = (List<TicketBooking>) session.getAttribute("ticketBooking");
+    %>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Journey Details</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (TicketBooking ticketBook : ticketBooking) { %>
+                        <tr>
+                            <td>
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Journey Details</h5>
+                                        <p class="card-text">
+                                            <strong>User Name:</strong> <%= ticketBook.getFullName() %><br>
+                                            <strong>Flight Name:</strong> <%= ticketBook.getFlightName() %><br>
+                                            <strong>Destination:</strong> <%= ticketBook.getDestination() %><br>
+                                            <strong>Source:</strong> <%= ticketBook.getSource() %><br>
+                                            <strong>Amount:</strong> $<%= ticketBook.getAmount() %><br>
+                                            <strong>Fight Number:</strong> <%= ticketBook.getFlightNumber() %><br>
+                                            <strong>Time:</strong> <%= ticketBook.getTime() %><br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><a href="ticketBookingPage.jsp" class="btn btn-danger">cancel</a></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+package jsonPack2ManojBro;
+
+public class Company {
+    private String name;
+    private List<DepartmentClass> 
+}

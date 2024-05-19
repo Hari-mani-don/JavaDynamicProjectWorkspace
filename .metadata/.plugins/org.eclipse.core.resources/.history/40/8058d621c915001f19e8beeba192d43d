@@ -1,0 +1,51 @@
+package jsonPack2ManojBro;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Company {
+	private String name;
+	private List<DepartmentHari> departments;
+
+	public Company() {
+	}
+
+	public Company(String name, List<DepartmentHari> departments) {
+		this.name = name;
+		this.departments = departments;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<DepartmentHari> getDepartments() {
+		return departments;
+	}
+
+	public void setDepartments(List<DepartmentHari> departments) {
+		this.departments = departments;
+	}
+
+	@Override
+	public String toString() {
+		return "Company [name=" + name + ", departments=" + departments + "]";
+	}
+
+	public static void main(String[] args) throws IOException {
+		ObjectMapper mapper = new ObjectMapper();
+//		CompanyWrapper companyWrapper = mapper.readValue(new File("/home/harimani/HariManiFolder/NewFile01.json"),
+//				CompanyWrapper.class);
+		Company companyWrapper = mapper.readValue(new File("/home/harimani/HariManiFolder/NewFile01.json"),
+				Company.class);
+//		Company company = companyWrapper.getCompany();
+		System.out.println(companyWrapper);
+	}
+}

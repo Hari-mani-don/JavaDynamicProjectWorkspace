@@ -1,0 +1,17 @@
+package jsonMoreComplex;
+
+public class Contact {
+	private String phone;
+	private Address address;
+	public Contact() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Contact(String phone, Address address) {
+		super();
+		this.phone = phone;
+		this.address = address;
+	}
+	
+	
+}

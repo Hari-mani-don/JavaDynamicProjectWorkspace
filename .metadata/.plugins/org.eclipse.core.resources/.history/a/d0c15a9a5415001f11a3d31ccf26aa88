@@ -1,0 +1,13 @@
+package jsonPack2ManojBro;
+
+import java.io.FileReader;
+
+import com.google.gson.Gson;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Gson gson = new Gson();
+		gson.fromJson(new FileReader("/home/harimani/HariManiFolder/New"), null)
+	}
+}

@@ -1,0 +1,13 @@
+package modelClass;
+
+public class JourneyDetails {
+	private String UserName;
+	private String FlightNumber;
+	private String FlightName;
+	private String Destination;
+	private String UserName;
+	private String UserName;
+	private String UserName;
+	private String UserName;
+	private String UserName;
+}
